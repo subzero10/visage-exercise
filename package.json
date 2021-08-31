@@ -5,7 +5,7 @@
     "start": "cd backend && node src/server.js",
     "build-backend": "cd backend && npm ci",
     "build-frontend": "cd frontend && NPM_CONFIG_PRODUCTION=false npm ci && npm run build",
-    "build": "npm run build-backend && cd .. && npm run build-frontend"
+    "build": "npm run build-frontend"
   },
   "dependencies": {
   }

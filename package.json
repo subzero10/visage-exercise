@@ -1,0 +1,11 @@
+{
+  "name": "visage-exercise",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd backend && node src/server.js",
+    "preinstall": "cd backend",
+    "build": "cd frontend && npm run build"
+  },
+  "dependencies": {
+  }
+}

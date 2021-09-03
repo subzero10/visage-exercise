@@ -3,7 +3,7 @@
   "comment": "this package.json is used by heroku to run migrations and build client side assets when deploying",
   "version": "1.0.0",
   "scripts": {
-    "start": "cd backend && node src/server.js",
+    "start": "cd backend && node src/http/server.js",
     "build": "cd backend && npm ci && npm run build && cd ../frontend && NPM_CONFIG_PRODUCTION=false npm ci && npm run build"
   },
   "dependencies": {

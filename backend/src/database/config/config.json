@@ -1,0 +1,17 @@
+{
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:",
+    "logging": false
+  },
+  "development": {
+    "username": "pangratioscosma",
+    "password": null,
+    "database": "pangratioscosma",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}

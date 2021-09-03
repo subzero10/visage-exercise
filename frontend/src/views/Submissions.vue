@@ -1,6 +1,5 @@
 <template>
-  <div class="about">
-    <h1>Submissions View</h1>
+  <div class="submissions">
     <SubmissionsList />
   </div>
 </template>

@@ -232,7 +232,7 @@ export default {
   height: 300px;
 }
 
-.page-link {
-  margin: 0 0 0 -1px;
+button {
+  margin: 5px;
 }
 </style>

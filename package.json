@@ -1,5 +1,6 @@
 {
   "name": "visage-exercise",
+  "comment": "this package.json is used by heroku to run migrations and build client side assets when deploying",
   "version": "1.0.0",
   "scripts": {
     "start": "cd backend && node src/server.js",

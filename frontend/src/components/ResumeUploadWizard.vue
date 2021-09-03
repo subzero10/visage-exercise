@@ -231,4 +231,8 @@ export default {
 .form-container {
   height: 300px;
 }
+
+.page-link {
+  margin: 0 0 0 -1px;
+}
 </style>

@@ -5,7 +5,7 @@
 - This repository contains two apps, part of an interview exercise.
 - The app is deployed on heroku.
 - The database is postgres. I used `sequelize` and `sequelize-cli` to create migrations and seed demo data.
-- There are tests for each project, to demonstrate understanding of test suites and how to write testable code.
+- There are tests for each project (albeit only a few), to demonstrate understanding of test suites and how to write testable code.
 - The bonus part of the exercise is done by tracking an upload source id (`fingerprintjs`), since I did not implement authentication. 
 
 ### Start the apps locally:
@@ -20,4 +20,4 @@ interacting:
 1. Start backend with `cd backend && npm start`
 2. Start frontend with `cd frontend && npm run serve`
 
-The frontend knows which how to make api calls to backend from this file: `frontend/vue.config.js`.
+The frontend knows how to make api calls to backend from this file: `frontend/vue.config.js`.

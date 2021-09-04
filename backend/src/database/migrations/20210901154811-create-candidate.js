@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Candidates', {
+    await queryInterface.createTable("Candidates", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -28,11 +28,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Resumes',
-          key: 'id',
+          model: "Resumes",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       createdAt: {
         allowNull: false,
@@ -44,7 +44,8 @@ module.exports = {
       }
     });
   },
+  /* eslint-disable no-unused-vars */
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Candidates');
+    await queryInterface.dropTable("Candidates");
   }
 };

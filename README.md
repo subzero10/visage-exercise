@@ -4,9 +4,9 @@
 
 - This repository contains two apps, part of an interview exercise.
 - The app is deployed on heroku.
-- The database is postgres.
+- The database is postgres. I used `sequelize` and `sequelize-cli` to create migrations and seed demo data.
 - There are tests for each project, to demonstrate understanding of test suites and how to write testable code.
-- The bonus part of the exercise is done by tracking an upload source id (fingerprintjs), since I did not implement authentication. 
+- The bonus part of the exercise is done by tracking an upload source id (`fingerprintjs`), since I did not implement authentication. 
 
 ### Start the apps locally:
 

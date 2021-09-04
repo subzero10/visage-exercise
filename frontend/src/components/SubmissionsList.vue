@@ -47,7 +47,7 @@
 
 <script>
 import { getCandidates } from "@/services/CandidatesService";
-import { showToast } from "@/utils/toasts";
+import { showErrorToast } from "@/utils/toasts";
 import { defaultPageSize } from "@/utils/config";
 
 export default {
@@ -74,7 +74,7 @@ export default {
           return this.candidates;
         })
         .catch((err) => {
-          showToast(this, err.message, "danger");
+          showErrorToast(this, err);
         });
     },
     getResumeDownloadLink: function (resumeId) {

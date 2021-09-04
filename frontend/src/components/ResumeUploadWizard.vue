@@ -115,7 +115,7 @@
 <script>
 import { storeFile } from "@/services/ResumeService";
 import { createCandidate } from "@/services/CandidatesService";
-import { showToast } from "@/utils/toasts";
+import { showToast, showErrorToast } from "@/utils/toasts";
 import { generateSource } from "@/utils/source-generator";
 
 export default {
@@ -154,14 +154,20 @@ export default {
         source: this.uploadSource,
       })
         .then((res) => {
+          const submissionsCount = res.data.submissionsCount;
           const message = res.data.bonusMessage || "Candidate submit success!";
-          showToast(this, message, "success");
+          showToast(
+            this,
+            `Submission number ${submissionsCount}`,
+            message,
+            "success"
+          );
           this.formIsSubmitting = false;
           this.onReset();
         })
         .catch((err) => {
           this.formIsSubmitting = false;
-          showToast(this, err.message, "danger");
+          showErrorToast(this, err);
         });
     },
     onReset: function () {
@@ -194,7 +200,7 @@ export default {
           .catch((err) => {
             this.fileUploaded = null;
             this.fileUploading = false;
-            showToast(this, err.message, "danger");
+            showErrorToast(this, err);
           });
       }
       this.step++;

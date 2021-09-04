@@ -24,16 +24,20 @@ const getAllCandidates = async (req, res) => {
   }
 };
 
-const shouldAwardBonusMessage = async (uploadSource) => {
+const getSubmissionsCountForSource = async (uploadSource) => {
   if (!uploadSource) {
     return 0;
   }
 
-  return await Candidate.count({
+  return Candidate.count({
     where: {
       source: uploadSource
     }
-  }) % 10 === 0;
+  });
+};
+
+const shouldAwardBonusMessage = (count) => {
+  return count % 10 === 0;
 };
 
 const createCandidate = async (req, res) => {
@@ -43,8 +47,10 @@ const createCandidate = async (req, res) => {
 
   try {
     const candidate = await Candidate.create(req.body.candidate);
-    const bonusMessage = await shouldAwardBonusMessage(req.body.candidate.source) ? bonusAwardMessage : undefined;
+    const submissionsCount = await getSubmissionsCountForSource(req.body.candidate.source);
+    const bonusMessage = shouldAwardBonusMessage(submissionsCount) ? bonusAwardMessage : undefined;
     return res.status(200).json({
+      submissionsCount,
       bonusMessage,
       candidate: {id: candidate.id}
     });
